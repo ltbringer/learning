@@ -10,36 +10,36 @@ TOC-wise progress
     - [x] 1.3 A taste of the language
     - [x] 1.3.1 Cheating your way to "Hello, world!"
     - [x] 1.3.2 Your First Rust Program
-    - [ ] 1.4 Downloading the book’s source code
-    - [ ] 1.5 What does Rust look and feel like?
-    - [ ] 1.6 What is Rust?
-    - [ ] 1.6.1 Goal of Rust: safety
-    - [ ] 1.6.2 Goal of Rust: productivity
-    - [ ] 1.6.3 Goal of Rust: control
-    - [ ] 1.7 Rust’s Big Features
-    - [ ] 1.7.1 Performance
-    - [ ] 1.7.2 Concurrency
-    - [ ] 1.7.3 Memory Efficiency
-    - [ ] 1.8 Downsides of Rust
-    - [ ] 1.8.1 Cyclic data structures
-    - [ ] 1.8.2 Compile times
-    - [ ] 1.8.3 Strictness
-    - [ ] 1.8.4 Size of the Language
-    - [ ] 1.8.5 Hype
-    - [ ] 1.9 Where does Rust fit best?
-    - [ ] 1.9.1 Command-line utilities
-    - [ ] 1.9.2 Data Processing
-    - [ ] 1.9.3 Extending an Application
-    - [ ] 1.9.4 Resource-constrained environments
-    - [ ] 1.9.5 Server-size applications
-    - [ ] 1.9.6 Desktop applications
-    - [ ] 1.9.7 Desktop
-    - [ ] 1.9.8 Mobile
-    - [ ] 1.9.9 Web
-    - [ ] 1.9.10 Systems Programming
-    - [ ] 1.10 Rust’s hidden feature: its community
-    - [ ] 1.11 Rust phrase book
-    - [ ] 1.12 Summary
+    - [x] 1.4 Downloading the book’s source code
+    - [x] 1.5 What does Rust look and feel like?
+    - [x] 1.6 What is Rust?
+    - [x] 1.6.1 Goal of Rust: safety
+    - [x] 1.6.2 Goal of Rust: productivity
+    - [x] 1.6.3 Goal of Rust: control
+    - [x] 1.7 Rust’s Big Features
+    - [x] 1.7.1 Performance
+    - [x] 1.7.2 Concurrency
+    - [x] 1.7.3 Memory Efficiency
+    - [x] 1.8 Downsides of Rust
+    - [x] 1.8.1 Cyclic data structures
+    - [x] 1.8.2 Compile times
+    - [x] 1.8.3 Strictness
+    - [x] 1.8.4 Size of the Language
+    - [x] 1.8.5 Hype
+    - [x] 1.9 Where does Rust fit best?
+    - [x] 1.9.1 Command-line utilities
+    - [x] 1.9.2 Data Processing
+    - [x] 1.9.3 Extending an Application
+    - [x] 1.9.4 Resource-constrained environments
+    - [x] 1.9.5 Server-size applications
+    - [x] 1.9.6 Desktop applications
+    - [x] 1.9.7 Desktop
+    - [x] 1.9.8 Mobile
+    - [x] 1.9.9 Web
+    - [x] 1.9.10 Systems Programming
+    - [x] 1.10 Rust’s hidden feature: its community
+    - [x] 1.11 Rust phrase book
+    - [x] 1.12 Summary
 
 - [ ] 2 LANGUAGE FOUNDATIONS
     - [ ] 2.1 Create a running program
