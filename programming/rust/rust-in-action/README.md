@@ -7,9 +7,9 @@ TOC-wise progress
 - [ ] 1 INTRODUCING RUST
     - [x] 1.1 Where is Rust used?
     - [x] 1.2 Advocating for Rust at work
-    - [ ] 1.3 A taste of the language
-    - [ ] 1.3.1 Cheating your way to "Hello, world!"
-    - [ ] 1.3.2 Your First Rust Program
+    - [x] 1.3 A taste of the language
+    - [x] 1.3.1 Cheating your way to "Hello, world!"
+    - [x] 1.3.2 Your First Rust Program
     - [ ] 1.4 Downloading the book’s source code
     - [ ] 1.5 What does Rust look and feel like?
     - [ ] 1.6 What is Rust?
