@@ -1,0 +1,293 @@
+# Rust in Action
+
+[book](https://www.manning.com/books/rust-in-action)
+
+TOC-wise progress
+
+- [ ] 1 INTRODUCING RUST
+    - [x] 1.1 Where is Rust used?
+    - [x] 1.2 Advocating for Rust at work
+    - [ ] 1.3 A taste of the language
+    - [ ] 1.3.1 Cheating your way to "Hello, world!"
+    - [ ] 1.3.2 Your First Rust Program
+    - [ ] 1.4 Downloading the book’s source code
+    - [ ] 1.5 What does Rust look and feel like?
+    - [ ] 1.6 What is Rust?
+    - [ ] 1.6.1 Goal of Rust: safety
+    - [ ] 1.6.2 Goal of Rust: productivity
+    - [ ] 1.6.3 Goal of Rust: control
+    - [ ] 1.7 Rust’s Big Features
+    - [ ] 1.7.1 Performance
+    - [ ] 1.7.2 Concurrency
+    - [ ] 1.7.3 Memory Efficiency
+    - [ ] 1.8 Downsides of Rust
+    - [ ] 1.8.1 Cyclic data structures
+    - [ ] 1.8.2 Compile times
+    - [ ] 1.8.3 Strictness
+    - [ ] 1.8.4 Size of the Language
+    - [ ] 1.8.5 Hype
+    - [ ] 1.9 Where does Rust fit best?
+    - [ ] 1.9.1 Command-line utilities
+    - [ ] 1.9.2 Data Processing
+    - [ ] 1.9.3 Extending an Application
+    - [ ] 1.9.4 Resource-constrained environments
+    - [ ] 1.9.5 Server-size applications
+    - [ ] 1.9.6 Desktop applications
+    - [ ] 1.9.7 Desktop
+    - [ ] 1.9.8 Mobile
+    - [ ] 1.9.9 Web
+    - [ ] 1.9.10 Systems Programming
+    - [ ] 1.10 Rust’s hidden feature: its community
+    - [ ] 1.11 Rust phrase book
+    - [ ] 1.12 Summary
+
+- [ ] 2 LANGUAGE FOUNDATIONS
+    - [ ] 2.1 Create a running program
+    - [ ] 2.1.1 Compiling single files
+    - [ ] 2.1.2 Compiling larger projects
+    - [ ] 2.2 A glance at Rust’s syntax
+    - [ ] 2.2.1 Defining and calling functions
+    - [ ] 2.3 Numbers
+    - [ ] 2.3.1 Integers and decimal (floating point) numbers
+    - [ ] 2.3.2 Integers with base 2, base 8 and base 16 notation
+    - [ ] 2.3.3 Comparing numbers
+    - [ ] 2.3.4 Rational, complex numbers and other numeric types
+    - [ ] 2.4 Iteration
+    - [ ] 2.4.1 Creating iterators that support for loops
+    - [ ] 2.5 Flow control
+    - [ ] 2.5.1 for: The central pillar of iteration
+    - [ ] 2.5.2 continue: Skipping the rest of the current iteration
+    - [ ] 2.5.3 while: Looping until a condition changes its state
+    - [ ] 2.5.4 loop: The basis for Rust’s looping constructs
+    - [ ] 2.5.5 break: Aborting a loop
+    - [ ] 2.5.6 if, if else, and else: Condition testing
+    - [ ] 2.5.7 match: Type-aware pattern matching
+    - [ ] 2.6 Defining functions
+    - [ ] 2.7 Project: Rendering the Mandelbrot set
+    - [ ] 2.8 Advanced function definitions
+    - [ ] 2.8.1 Explicit lifetime annotations
+    - [ ] 2.8.2 Generic functions
+    - [ ] 2.9 Creating grep-lite
+    - [ ] 2.10 Making lists of things with arrays, slices and vectors
+    - [ ] 2.10.1 Arrays
+    - [ ] 2.10.2 Slices
+    - [ ] 2.10.3 Vectors
+    - [ ] 2.11 Including Third Party Code
+    - [ ] 2.11.1 Adding Support for Regular Expressions
+    - [ ] 2.11.2 Generating the third-party crate documentation locally
+    - [ ] 2.11.3 Managing Rust toolchains with rustup
+    - [ ] 2.12 Supporting command-line arguments
+    - [ ] 2.13 Reading from files
+    - [ ] 2.14 Reading from STDIN
+    - [ ] 2.15 Summary
+
+- [ ] 3 COMPOUND DATA TYPES
+    - [ ] 3.1 Using plain functions to experiment with an API
+    - [ ] 3.2 Modelling files with struct
+    - [ ] 3.3 Adding Methods to a struct with impl
+    - [ ] 3.3.1 Simplifying object creation by implementing a new() method
+    - [ ] 3.4 Returning errors
+    - [ ] 3.4.1 Modifying a known global variable
+    - [ ] 3.4.2 Making use of the Result return type
+    - [ ] 3.5 Defining and making use of enum
+    - [ ] 3.5.1 Using an enum to manage internal state
+    - [ ] 3.6 Defining Common Behavior with Traits
+    - [ ] 3.6.1 Creating a Read trait
+    - [ ] 3.6.2 Implementing std::fmt::display for your own types
+    - [ ] 3.7 Exposing your types to the world
+    - [ ] 3.7.1 Protecting private data
+    - [ ] 3.8 Creating In-line Documentation
+    - [ ] 3.8.1 Using rustdoc to Render Docs For a Single Source File
+    - [ ] 3.8.2 Using cargo to Render Docs for a Crate and its Dependencies
+    - [ ] 3.9 Summary
+    - [ ]  READ IN LIVEBOOK
+    - [ ] 4 LIFETIMES, OWNERSHIP AND BORROWING
+    - [ ] 4.1" Implementing" a Mock CubeSat Ground Station
+    - [ ] 4.1.1 Encountering our first lifetime issue
+    - [ ] 4.1.2 Special behavior of primitive types
+    - [ ] 4.2 Guide to the figures in this chapter
+    - [ ] 4.3 What is an Owner? Does it Have any Responsibilities?
+    - [ ] 4.4 How Ownership Moves
+    - [ ] 4.5 Resolving Ownership Issues
+    - [ ] 4.5.1 Use references where full ownership is not required
+    - [ ] 4.5.2 Use Fewer Long-Lived Values
+    - [ ] 4.5.3 Duplicate the value
+    - [ ] 4.5.4 Wrap Data Within Specialty Types
+    - [ ] 4.6 Summary
+
+- [ ] 5 DATA IN DEPTH
+    - [ ] 5.1 Bit Patterns and Types
+    - [ ] 5.2 Life of an integer
+    - [ ] 5.2.1 Understanding Endianness
+    - [ ] 5.3 Decimal Numbers
+    - [ ] 5.3.1 About Floating Point
+    - [ ] 5.3.2 Looking inside an f32
+    - [ ] 5.3.3 About the Sign Bit
+    - [ ] 5.3.4 About the Exponent
+    - [ ] 5.3.5 About the Mantissa
+    - [ ] 5.3.6 Representing decimal numbers in a single byte with a fixed-point number format
+    - [ ] 5.4 Generating f32 values between 0 and 1 from random bytes
+    - [ ] 5.5 Implementing a CPU in Software to Establish that Functions are also Data
+    - [ ] 5.5.1 CPU 1: "the Adder"
+    - [ ] 5.5.2 First working emulator
+    - [ ] 5.5.3 CPU 2: "the Multiplier"
+    - [ ] 5.5.4 CPU 3: Adding functions
+    - [ ] 5.5.5 CPU 4: Adding the rest
+    - [ ] 5.6 Summary
+
+- [ ] 6 MEMORY
+    - [ ] 6.1 Pointers
+    - [ ] 6.2 Exploring Rust’s reference and pointer types
+    - [ ] 6.2.1 Raw pointers in Rust
+    - [ ] 6.2.2 Rust’s pointer ecosystem
+    - [ ] 6.2.3 Smart pointer building blocks
+    - [ ] 6.3 Providing programs with memory for their data
+    - [ ] 6.3.1 The stack
+    - [ ] 6.3.2 The heap
+    - [ ] 6.3.3 What is dynamic memory allocation?
+    - [ ] 6.3.4 Analyzing the impact of dynamic memory allocation
+    - [ ] 6.4 Virtual Memory
+    - [ ] 6.4.1 Background
+    - [ ] 6.4.2 Step 1: Having a Process Scan Its Own Memory
+    - [ ] 6.4.3 Translating virtual addresses to physical addresses
+    - [ ] 6.4.4 Step 2: Working with the operating system to scan an address space
+    - [ ] 6.4.5 Step 3: reading and writing bytes to processes' memory
+    - [ ] 6.5 Wrap up
+
+- [ ] 7 FILES & STORAGE
+    - [ ] 7.1 What is a file format?
+    - [ ] 7.2 Creating your own file formats for data storage with serde
+    - [ ] 7.2.1 Writing data to disk with serde & the bincode format
+    - [ ] 7.3 Implementing a hexdump Clone
+    - [ ] 7.4 File operations in Rust
+    - [ ] 7.4.1 Opening a file in Rust and controlling its file mode
+    - [ ] 7.4.2 Interacting with the file system in a type-safe manner with std::fs::Path
+    - [ ] 7.5 Implementing a key-value store with a log-structured, append-only storage architecture
+    - [ ] 7.5.1 The key-value model
+    - [ ] 7.5.2 Introducing actionkv v0.1: an in-memory key-value store with a command line interface
+    - [ ] 7.6 actionkv v0.1 front-end code
+    - [ ] 7.6.1 Tailoring what is compiled with conditional compilation
+    - [ ] 7.7 Understanding the core of actionkv: the libactionkv crate
+    - [ ] 7.7.1 Initializing the ActionKV struct
+    - [ ] 7.7.2 Processing an individual record
+    - [ ] 7.7.3 Writing multi-byte binary data to disk in a guaranteed byte order
+    - [ ] 7.7.4 Validating I/O errors with checksums
+    - [ ] 7.7.5 Inserting a new key-value pair into an existing database
+    - [ ] 7.7.6 libactionkv full code listing
+    - [ ] 7.7.7 Working with keys and values with HashMap and BTreeMap
+    - [ ] 7.7.8 Creating a HashMap and populating it with values
+    - [ ] 7.7.9 Retrieving values from HashMap and BTreeMap
+    - [ ] 7.7.10 How to decide between HashMap and BTreeMap
+    - [ ] 7.7.11 Adding database index to action_kv v2
+    - [ ] 7.8 Summary
+
+- [ ] 8 NETWORKING
+    - [ ] 8.1 Just enough HTTP
+    - [ ] 8.2 Generating an HTTP GET request with reqwest
+    - [ ] 8.3 Trait Objects
+    - [ ] 8.3.1 What do trait objects enable?
+    - [ ] 8.3.2 What is a trait object?
+    - [ ] 8.3.3 Creating a tiny role-playing game
+    - [ ] 8.4 TCP
+    - [ ] 8.4.1 What is a "port number"?
+    - [ ] 8.4.2 Converting a hostname to an IP address
+    - [ ] 8.5 Ergonomic Error Handling for Libraries
+    - [ ] 8.5.1 Issue: unable to return multiple error types
+    - [ ] 8.5.2 Wrapping downstream errors by defining our own error type
+    - [ ] 8.5.3 Cheat with unwrap() and expect()
+    - [ ] 8.6 MAC addresses
+    - [ ] 8.6.1 Generating MAC addresses
+    - [ ] 8.7 Implementing state machines with Rust’s enums
+    - [ ] 8.8 Raw TCP
+    - [ ] 8.9 Creating a virtual networking device
+    - [ ] 8.10" Raw" HTTP
+    - [ ] 8.11 Wrapping Up
+
+- [ ] 9 TIME AND TIME KEEPING
+    - [ ] 9.1 Background
+    - [ ] 9.2 Sources of Time
+    - [ ] 9.3 Definitions
+    - [ ] 9.4 Encoding Time
+    - [ ] 9.4.1 Representing time zones
+    - [ ] 9.5 clock v0.1.0: Teaching an application how to tell the time
+    - [ ] 9.6 clock v0.1.1: Formatting timestamps to comply with ISO 8601 and email standards
+    - [ ] 9.6.1 Refactoring the clock v0.1.0 code to support wider architecture
+    - [ ] 9.6.2 Formatting the time as a UNIX timestamp or a formatted string according to ISO 8601, RFC 2822, and RFC 3339
+    - [ ] 9.6.3 Providing a full command-line interface
+    - [ ] 9.6.4 The full clock v0.1.1 code listing
+    - [ ] 9.7 clock v0.1.2: Setting the time
+    - [ ] 9.7.1 Common behavior
+    - [ ] 9.7.2 Setting the time in operating systems that use libc
+    - [ ] 9.7.3 Setting the time on MS Windows
+    - [ ] 9.7.4 clock v0.1.2 Full code listing
+    - [ ] 9.8 Improving error handling
+    - [ ] 9.9 clock v0.1.3 Resolving differences between clocks with the Network Time Protocol (NTP)
+    - [ ] 9.9.1 Sending NTP requests and interpreting responses
+    - [ ] 9.9.2 Adjusting the local time as a result of the server’s response
+    - [ ] 9.9.3 Converting between time representations that use different precisions and epochs
+    - [ ] 9.9.4 clock v0.1.3 full code listing
+    - [ ] 9.10 Summary
+
+- [ ] 10 PROCESSES, THREADS AND CONTAINERS
+    - [ ] 10.1 Anonymous Functions
+    - [ ] 10.2 Spawning Threads
+    - [ ] 10.2.1 What does it mean to "join" threads?
+    - [ ] 10.2.2 Creating more threads takes almost no time at all
+    - [ ] 10.2.3 Effect of spawning many threads
+    - [ ] 10.2.4 Shared variable
+    - [ ] 10.3 Differences between closures (|| {}) and functions (fn)
+    - [ ] 10.4 Procedurally generated avatars from a multi-threaded parser and code generator
+    - [ ] 10.4.1 How to run render-hex and its intended output
+    - [ ] 10.4.2 Single-threaded render-hex overview
+    - [ ] 10.4.3 Spawning a thread per logical task
+    - [ ] 10.4.4 Using a thread pool and task queue
+    - [ ] 10.5 Concurrency and task virtualization
+    - [ ] 10.5.1 Threads
+    - [ ] 10.5.2 What is a context switch?
+    - [ ] 10.5.3 Processes
+    - [ ] 10.5.4 Web Assembly
+    - [ ] 10.5.5 Containers
+    - [ ] 10.5.6 Why use an operating system at all?
+    - [ ] 10.6 What you have learned
+
+- [ ] 11 KERNEL
+    - [ ] 11.1 A fledgling operating system (FledgeOS)
+    - [ ] 11.1.1 Setting up a development environment for developing an operating system kernel
+    - [ ] 11.1.2 fledgeos project structure
+    - [ ] 11.1.3 A minimal operating system kernel
+    - [ ] 11.1.4 Panic handling
+    - [ ] 11.1.5 Writing to the screen with VGA-compatible text mode
+    - [ ] 11.1.6_ start(), the "main()" function for FledgeOS
+    - [ ] 11.1.7 Being power conscious by interacting with the CPU directly
+    - [ ] 11.1.8 Handling exceptions properly, almost
+    - [ ] 11.2 Nice output
+    - [ ] 11.2.1 Controlling the in-memory representation of enums
+    - [ ] 11.2.2 Why use enums?
+    - [ ] 11.2.3 Creating a type that can "print" to the VGA frame buffer
+    - [ ] 11.2.4 Printing to the screen
+    - [ ] 11.2.5 Full code listing of FledgeOS with printing enabled
+    - [ ] 11.3 Implementing a panic handler that reports the error to the user
+    - [ ] 11.3.1 Re-implementing panic() by making use of core::fmt::Write
+    - [ ] 11.3.2 Implementing core::fmt::Write
+    - [ ] 11.3.3 Full code listing for FledgeOS with user-friendly panic handling
+    - [ ] 11.4 Summing Up
+
+- [ ] 12 SIGNALS, INTERRUPTS AND EXCEPTIONS
+    - [ ] 12.1 Disambiguating several related terms
+    - [ ] 12.2 Avoiding writing code by relying on the default signal handling behavior
+    - [ ] 12.2.1 Using SIGSTOP and SIGCONT to suspend and resume a program’s operation
+    - [ ] 12.2.2 Listing all signals supported by the operating system
+    - [ ] 12.3 Handling signals with custom actions
+    - [ ] 12.3.1 Global variables in Rust
+    - [ ] 12.3.2 Using a global variable to indicate that shutdown has been initiated
+    - [ ] 12.4 Sending application-defined signals
+    - [ ] 12.4.1 Understanding function pointers and their syntax
+    - [ ] 12.5 Ignoring signals
+    - [ ] 12.6 Shutting down from deeply nested call stacks
+    - [ ] 12.6.1 Setting up intrinsics in a program
+    - [ ] 12.6.2 Casting a pointer to another type
+    - [ ] 12.6.3 Running the Linux-specific code from Listing 12.23 in other operating systems via Docker
+    - [ ] 12.6.4 Compiling the code
+    - [ ] 12.7 A note on applying these techniques to platforms without signals
+    - [ ] 12.8 Revising exceptions
+    - [ ] 12.9 Summary

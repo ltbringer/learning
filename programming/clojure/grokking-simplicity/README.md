@@ -1,0 +1,377 @@
+# Grokking Simplicity
+
+[book](https://www.manning.com/books/grokking-simplicity)
+
+TOC-wise progress
+
+- [ ] INTRODUCTION
+  - [ ] 1 WELCOME TO GROKKING SIMPLICITY
+  - [ ] What is functional programming?
+  - [ ] The problems with the definition for practical use
+  - [ ] The definition of functional programming is confusing to managers
+  - [ ] Wetreat functional programming as a set of skills and concepts
+  - [ ] Distinguishing actions, calculations, and data
+  - [ ] Functional programmers distinguish code that matters when you call it
+  - [ ] Functional programmers distinguish inert data from code that does work
+  - [ ] Functional programmers see actions, calculations, and data
+  - [ ] The three categories of code in functional programming
+  - [ ] How does distinguishing actions, calculations, and data help us?
+  - [ ] Why is this book different from other functional programming books?
+  - [ ] What is functional thinking?
+  - [ ] Ground rules for ideas and skills in this book
+  - [ ] Brain break
+  - [ ] Conclusion
+  - [ ] Summary
+
+- [ ] 2 FUNCTIONAL THINKING IN ACTION
+  - [ ] Welcome to Toni’s Pizza
+  - [ ] Part 1: Distinguishing actions, calculations, and data
+  - [ ] Organizing code by "rate of change"
+  - [ ] Part 2: First-class abstractions
+  - [ ] Timelines visualize distributed systems
+  - [ ] Multiple timelines can execute in different orderings
+  - [ ] Hard-won lessons about distributed systems
+  - [ ] Cutting the timeline: Making the robots wait for each other
+  - [ ] Positive lessons learned about timelines
+  - [ ] Conclusion
+  - [ ] Summary
+
+- [ ] 3 DISTINGUISHING ACTIONS, CALCULATIONS, AND DATA
+  - [ ] Actions, calculations, and data
+  - [ ] Actions, calculations, and data apply to any situation
+  - [ ] Lessons from our shopping process
+  - [ ] Deep dive: Data
+  - [ ] Brain break
+  - [ ] Applying functional thinking to new code
+  - [ ] Drawing the coupon email process
+  - [ ] Implementing the coupon email process
+  - [ ] Brain break
+  - [ ] Deep dive: Calculations
+  - [ ] Applying functional thinking to existing code
+  - [ ] Actions spread through code
+  - [ ] Actions can take many forms
+  - [ ] Deep dive: Actions
+  - [ ] Conclusion
+  - [ ] Summary
+
+- [ ] 4 EXTRACTING CALCULATIONS FROM ACTIONS
+  - [ ] Welcome to MegaMart.com!
+  - [ ] Calculating free shipping
+  - [ ] Calculating tax
+  - [ ] Weneed to make it more testable
+  - [ ] Weneed to make it more reusable
+  - [ ] Distinguishing actions, calculations, and data
+  - [ ] Functions have inputs and outputs
+  - [ ] Testing and reuse relate to inputs and outputs
+  - [ ] Extracting a calculation from an action
+  - [ ] Extracting another calculation from an action
+  - [ ] Brain break
+  - [ ] Step-by-step: Extracting a calculation
+  - [ ] Let’s see all of our code in one place
+  - [ ] Conclusion
+  - [ ] Summary
+
+- [ ] 5 IMPROVING THE DESIGN OF ACTIONS
+  - [ ] Aligning design with business requirements
+  - [ ] Aligning the function with business requirements
+  - [ ] Brain break
+  - [ ] Principle: Minimize implicit inputs and outputs
+  - [ ] Reducing implicit inputs and outputs
+  - [ ] Giving the code a once-over
+  - [ ] Categorizing our calculations
+  - [ ] Principle: Design is about pulling things apart
+  - [ ] Improving the design by pulling add_item() apart
+  - [ ] Extracting out a copy-on-write pattern
+  - [ ] Using add_item()
+  - [ ] Categorizing our calculations
+  - [ ] Brain break
+  - [ ] Smaller functions and more calculations
+  - [ ] Conclusion
+  - [ ] Summary
+
+- [ ] 6 STAYING IMMUTABLE IN A MUTABLE LANGUAGE
+  - [ ] Can immutability be applied everywhere?
+  - [ ] Categorizing operations into reads, writes, or both
+  - [ ] The three steps of the copy-on-write discipline
+  - [ ] Converting a write to a read with copy-on-write
+  - [ ] Complete diff from mutating to copy-on-write
+  - [ ] These copy-on-write operations are generalizable
+  - [ ] JavaScript Arrays at a glance
+  - [ ] What to do if an operation is a read and a write
+  - [ ] Splitting a function that does a read and write
+  - [ ] Returning two values from one function
+  - [ ] Brain break
+  - [ ] Reads to immutable data structures are calculations
+  - [ ] Applications have state that changes over time
+  - [ ] Immutable data structures are fast enough
+  - [ ] Copy-on-write operations on Objects
+  - [ ] JavaScript Objects at a glance
+  - [ ] Converting nested writes to reads
+  - [ ] What gets copied?
+  - [ ] Visualizing shallow copies and structural sharing
+  - [ ] Conclusion
+  - [ ] Summary
+
+- [ ] 7 STAYING IMMUTABLE WITH UNTRUSTED CODE
+  - [ ] Immutability with legacy code
+  - [ ] Our copy-on-write code has to interact with untrusted code
+  - [ ] Defensive copying defends the immutable original
+  - [ ] Implementing defensive copies
+  - [ ] The rules of defensive copying
+  - [ ] Wrapping untrusted code
+  - [ ] Defensive copying you may be familiar with
+  - [ ] Brain break
+  - [ ] Copy-on-write and defensive copying compared
+  - [ ] Deep copies are more expensive than shallow copies
+  - [ ] Implementing deep copy in JavaScript is difficult
+  - [ ] Adialog between copy-on-write and defensive copying
+  - [ ] Conclusion
+  - [ ] Summary
+
+- [ ] 8 STRATIFIED DESIGN, PART 1
+  - [ ] What is software design?
+  - [ ] What is stratified design?
+  - [ ] Developing our design sense
+  - [ ] Patterns of stratified design
+  - [ ] Pattern 1: Straightforward implementations
+  - [ ] Brain break
+  - [ ] Brain break
+  - [ ] Three different zoom levels
+  - [ ] Extracting out the for loop
+  - [ ] Brain break
+  - [ ] Pattern 1 Review: Straightforward implementation
+  - [ ] Conclusion
+  - [ ] Summary
+
+- [ ] 9 STRATIFIED DESIGN, PART 2
+  - [ ] Patterns of stratified design
+  - [ ] Pattern 2: Abstraction barrier
+  - [ ] Abstraction barriers hide implementations
+  - [ ] Ignoring details is symmetrical
+  - [ ] Swapping the shopping cart’s data structure
+  - [ ] Reimplementing the shopping cart as an object
+  - [ ] The abstraction barrier lets us ignore details
+  - [ ] When to use (and when not to use!) abstraction barriers
+  - [ ] Pattern 2 Review: Abstraction barrier
+  - [ ] Our code is more straightforward
+  - [ ] Pattern 3: Minimal interface
+  - [ ] Pattern 3 Review: Minimal interface
+  - [ ] Pattern 4: Comfortable layers
+  - [ ] Patterns of stratified design
+  - [ ] What does the graph show us about our code?
+  - [ ] Code at the top of the graph is easier to change
+  - [ ] Testing code at the bottom is more important
+  - [ ] Code at the bottom is more reusable
+  - [ ] Summary: what the graph shows us about our code
+  - [ ] Conclusion
+  - [ ] Summary
+
+- [ ] 10 FIRST-CLASS FUNCTIONS, PART 1
+  - [ ] Marketing still needs to coordinate with dev
+  - [ ] Code smell: Implicit argument in function name
+  - [ ] Refactoring: express implicit argument
+  - [ ] Recognize what is and what isn’t first class
+  - [ ] Will field names as strings lead to more bugs?
+  - [ ] Will first-class fields make the API hard to change?
+  - [ ] Wewill use a lot of Objects and Arrays
+  - [ ] First-class functions can replace any syntax
+  - [ ] For loop example: eating and cleaning up
+  - [ ] Refactoring: replace body with callback
+  - [ ] What is this syntax?
+  - [ ] Why are we wrapping the code in a function?
+  - [ ] Brain break
+  - [ ] Conclusion
+  - [ ] Summary
+
+- [ ] 11 FIRST-CLASS FUNCTIONS, PART 2
+  - [ ] One code smell and two refactorings
+  - [ ] Refactoring copy-on-write
+  - [ ] Refactoring copy-on-write for arrays
+  - [ ] Returning functions from functions
+  - [ ] Brain break
+  - [ ] Brain break
+  - [ ] Conclusion
+  - [ ] Summary
+
+- [ ] 12 FUNCTIONAL ITERATION
+  - [ ] One code smell and two refactorings
+  - [ ] MegaMart is creating a communications team
+  - [ ] Deriving map() from examples
+  - [ ] Functional tool: map()
+  - [ ] Three ways to pass a function
+  - [ ] Example: email addresses of all customers
+  - [ ] Deriving filter() from examples
+  - [ ] Functional tool: filter()
+  - [ ] Example: customers with zero purchases
+  - [ ] Deriving reduce() from examples
+  - [ ] Functional tool: reduce()
+  - [ ] Example: concatenating strings
+  - [ ] Things you can do with reduce()
+  - [ ] 3 functional tools compared
+  - [ ] Conclusion
+  - [ ] Summary
+
+- [ ] 13 CHAINING FUNCTIONAL TOOLS
+    - [ ] The customer communications team continues
+    - [ ] Clarifying chains, method 1: name the steps
+    - [ ] Clarifying chains, method 2: naming the callbacks
+    - [ ] Clarifying chains: 2 methods compared
+    - [ ] Example: emails of customers who have made one purchase
+    - [ ] Refactoring existing for loops to functional tools
+    - [ ] Tip 1: make data
+    - [ ] Tip 2: operate on whole array at once
+    - [ ] Tip 3: many small steps
+    - [ ] Tip 3: many small steps
+    - [ ] Comparing functional to imperative code
+    - [ ] Summary of chaining tips
+    - [ ] Debugging tips for chaining
+    - [ ] Many other functional tools
+    - [ ] reduce() for building up values
+    - [ ] reduce() for building up values
+    - [ ] Getting creative with data representation
+    - [ ] Conclusion
+    - [ ] Summary
+
+- [ ] 14 FUNCTIONAL TOOLS FOR NESTED DATA
+    - [ ] Higher-order functions for values in Objects
+    - [ ] Making the field name explicit
+    - [ ] Deriving update()
+    - [ ] Using update() to modify values
+    - [ ] Brain break
+    - [ ] Refactoring: replace get, modify, set with update()
+    - [ ] Functional tool: update()
+    - [ ] Visualizing values in objects
+    - [ ] Visualizing nested updates
+    - [ ] Applying update() to nested data
+    - [ ] Deriving updateOption()
+    - [ ] Deriving update2()
+    - [ ] Visualizing update2() on nested objects
+    - [ ] Writing incrementSizeByName() 4 ways
+    - [ ] Deriving update3()
+    - [ ] Deriving nestedUpdate()
+    - [ ] The anatomy of safe recursion
+    - [ ] Visualizing nestedUpdate()
+    - [ ] The superpower of recursion
+    - [ ] Design considerations with deep nesting
+    - [ ] Abstraction barriers on deeply nested data
+    - [ ] Asummary of our use of higher-order functions
+    - [ ] Conclusion
+    - [ ] Summary
+
+- [ ] 15 ISOLATING TIMELINES
+    - [ ] There’s a bug!
+    - [ ] Now we can try to click twice fast
+    - [ ] The timeline diagram shows what happens over time
+    - [ ] The 2 fundamentals of timeline diagrams
+    - [ ] Two tricky details about the order of actions
+    - [ ] Drawing the add-to-cart timeline - Step 1
+    - [ ] Asynchronous calls require new timelines
+    - [ ] Different languages, different threading models
+    - [ ] Building the timeline step-by-step
+    - [ ] Drawing the add-to-cart timeline - Step 2
+    - [ ] Timeline diagrams capture the two kinds of sequential code
+    - [ ] Timeline diagrams capture the uncertain ordering of parallel code
+    - [ ] Principles of working with timelines
+    - [ ] Simplifying the timeline
+    - [ ] Reading our finished timeline
+    - [ ] Simplifying the add-to-cart timeline diagram - Step 3
+    - [ ] Review: Drawing the timeline (steps 1-3)
+    - [ ] Summary: Drawing timeline diagrams
+    - [ ] Timeline diagrams side-by-side can reveal problems
+    - [ ] Two slow clicks get the right result
+    - [ ] Two fast clicks can get the wrong result
+    - [ ] Timelines that share resources can cause problems
+    - [ ] Converting a global variable to a local one
+    - [ ] Converting a global variable to an argument
+    - [ ] Brain break
+    - [ ] Making our code more reusable
+    - [ ] Principle: In an async context, we use a final callback instead of a return value as our explicit output
+    - [ ] Brain break
+    - [ ] Conclusion
+    - [ ] Summary
+
+- [ ] 16 SHARING RESOURCES BETWEEN TIMELINES
+    - [ ] Principles of working with timelines
+    - [ ] The shopping cart still has a bug
+    - [ ] Weneed to guarantee the order of the DOM updates
+    - [ ] Building a queue in JavaScript
+    - [ ] Brain break
+    - [ ] Principle: Use real-world sharing as inspiration
+    - [ ] Making the queue reusable
+    - [ ] Analyzing the timeline
+    - [ ] Principle: Analyze the timeline diagram to know if there will be problems
+    - [ ] Making the queue skip
+    - [ ] Conclusion
+    - [ ] Summary
+    - [ ] Upnext …​
+    - [ ] READ IN LIVEBOOK
+
+- [ ] 17 COORDINATING TIMELINES
+    - [ ] Principles of working with timelines
+    - [ ] There’s a bug!
+    - [ ] How the code was changed
+    - [ ] Identify actions - Step 1
+    - [ ] Draw each action - Step 2
+    - [ ] Simplify the diagram - Step 3
+    - [ ] Possible ordering analysis
+    - [ ] Why this this timeline is faster
+    - [ ] Brain break
+    - [ ] Waiting for both parallel callbacks
+    - [ ] Aconcurrency primitive for cutting timelines
+    - [ ] Using Cut() in our code
+    - [ ] Brain break
+    - [ ] Uncertain ordering analysis
+    - [ ] Parallel execution analysis
+    - [ ] Multiple click analysis
+    - [ ] Aprimitive to call something just once
+    - [ ] Implicit vs explicit model of time
+    - [ ] Brain break
+    - [ ] Summary: Manipulating timelines
+    - [ ] Conclusion
+    - [ ] Summary
+
+- [ ] 18 REACTIVE AND ONION ARCHITECTURES
+    - [ ] Two separate architectural patterns
+    - [ ] Coupling of causes and effects of changes
+    - [ ] What is Reactive Architecture?
+    - [ ] Tradeoffs of the Reactive Architecture
+    - [ ] Cells are first-class state
+    - [ ] Wecan make ValueCells reactive
+    - [ ] Wecan update shipping icons when the Cell changes
+    - [ ] FormulaCells calculate derived values
+    - [ ] Mutable state in functional programming
+    - [ ] How reactive architecture reconfigures systems
+    - [ ] Decouple effects from their causes
+    - [ ] Decoupling manages a center of cause and effect
+    - [ ] Treat series of steps as pipeliness
+    - [ ] Flexibility in your timeline
+    - [ ] Two separate architectural patterns
+    - [ ] What is the onion architecture?
+    - [ ] Review: Actions, calculations, and data
+    - [ ] Review: Stratified design
+    - [ ] Traditional layered architecture
+    - [ ] Afunctional architecture
+    - [ ] Facilitating change and reuse
+    - [ ] Examine the terms used to place it in a layer
+    - [ ] Readability and awkwardness
+    - [ ] Conclusion
+    - [ ] Summary
+
+- [ ] 19 THE FUNCTIONAL JOURNEY AHEAD
+    - [ ] Aplan for the chapter
+    - [ ] Wehave learned the skills of professionals
+    - [ ] Big takeaways
+    - [ ] The ups and downs of skill acquisition
+    - [ ] Parallel tracks to mastery
+    - [ ] Sandbox: Start a side project
+    - [ ] Sandbox: Practice exercises
+    - [ ] Production: Eliminate a bug today
+    - [ ] Production: Incrementally improve the design
+    - [ ] Popular functional languages
+    - [ ] Functional languages with the most jobs
+    - [ ] Functional languages by platform
+    - [ ] Functional languages by learning opportunity
+    - [ ] Get mathy
+    - [ ] Further reading
+    - [ ] Conclusion
+    - [ ] Summary
