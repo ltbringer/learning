@@ -4,7 +4,7 @@
 
 TOC-wise progress
 
-- [ ] 1 INTRODUCING RUST
+- [x] 1 INTRODUCING RUST
     - [x] 1.1 Where is Rust used?
     - [x] 1.2 Advocating for Rust at work
     - [x] 1.3 A taste of the language
@@ -42,31 +42,31 @@ TOC-wise progress
     - [x] 1.12 Summary
 
 - [ ] 2 LANGUAGE FOUNDATIONS
-    - [ ] 2.1 Create a running program
-    - [ ] 2.1.1 Compiling single files
-    - [ ] 2.1.2 Compiling larger projects
-    - [ ] 2.2 A glance at Rust’s syntax
-    - [ ] 2.2.1 Defining and calling functions
-    - [ ] 2.3 Numbers
-    - [ ] 2.3.1 Integers and decimal (floating point) numbers
-    - [ ] 2.3.2 Integers with base 2, base 8 and base 16 notation
-    - [ ] 2.3.3 Comparing numbers
-    - [ ] 2.3.4 Rational, complex numbers and other numeric types
-    - [ ] 2.4 Iteration
-    - [ ] 2.4.1 Creating iterators that support for loops
-    - [ ] 2.5 Flow control
-    - [ ] 2.5.1 for: The central pillar of iteration
-    - [ ] 2.5.2 continue: Skipping the rest of the current iteration
-    - [ ] 2.5.3 while: Looping until a condition changes its state
-    - [ ] 2.5.4 loop: The basis for Rust’s looping constructs
-    - [ ] 2.5.5 break: Aborting a loop
-    - [ ] 2.5.6 if, if else, and else: Condition testing
-    - [ ] 2.5.7 match: Type-aware pattern matching
-    - [ ] 2.6 Defining functions
-    - [ ] 2.7 Project: Rendering the Mandelbrot set
-    - [ ] 2.8 Advanced function definitions
-    - [ ] 2.8.1 Explicit lifetime annotations
-    - [ ] 2.8.2 Generic functions
+    - [x] 2.1 Create a running program
+    - [x] 2.1.1 Compiling single files
+    - [x] 2.1.2 Compiling larger projects
+    - [x] 2.2 A glance at Rust’s syntax
+    - [x] 2.2.1 Defining and calling functions
+    - [x] 2.3 Numbers
+    - [x] 2.3.1 Integers and decimal (floating point) numbers
+    - [x] 2.3.2 Integers with base 2, base 8 and base 16 notation
+    - [x] 2.3.3 Comparing numbers
+    - [x] 2.3.4 Rational, complex numbers and other numeric types
+    - [x] 2.4 Iteration
+    - [x] 2.4.1 Creating iterators that support for loops
+    - [x] 2.5 Flow control
+    - [x] 2.5.1 for: The central pillar of iteration
+    - [x] 2.5.2 continue: Skipping the rest of the current iteration
+    - [x] 2.5.3 while: Looping until a condition changes its state
+    - [x] 2.5.4 loop: The basis for Rust’s looping constructs
+    - [x] 2.5.5 break: Aborting a loop
+    - [x] 2.5.6 if, if else, and else: Condition testing
+    - [x] 2.5.7 match: Type-aware pattern matching
+    - [x] 2.6 Defining functions
+    - [x] 2.7 Project: Rendering the Mandelbrot set
+    - [x] 2.8 Advanced function definitions
+    - [x] 2.8.1 Explicit lifetime annotations
+    - [x] 2.8.2 Generic functions
     - [ ] 2.9 Creating grep-lite
     - [ ] 2.10 Making lists of things with arrays, slices and vectors
     - [ ] 2.10.1 Arrays
