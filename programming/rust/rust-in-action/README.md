@@ -63,7 +63,7 @@ TOC-wise progress
     - [x] 2.5.6 if, if else, and else: Condition testing
     - [x] 2.5.7 match: Type-aware pattern matching
     - [x] 2.6 Defining functions
-    - [x] 2.7 Project: Rendering the Mandelbrot set
+    - [ ] 2.7 Project: Rendering the Mandelbrot set
     - [x] 2.8 Advanced function definitions
     - [x] 2.8.1 Explicit lifetime annotations
     - [x] 2.8.2 Generic functions
