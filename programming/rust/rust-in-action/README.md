@@ -76,7 +76,7 @@ TOC-wise progress
     - [ ] 2.11.1 Adding Support for Regular Expressions
     - [ ] 2.11.2 Generating the third-party crate documentation locally
     - [ ] 2.11.3 Managing Rust toolchains with rustup
-    - [ ] 2.12 Supporting command-line arguments
+    - [x] 2.12 Supporting command-line arguments
     - [ ] 2.13 Reading from files
     - [ ] 2.14 Reading from STDIN
     - [ ] 2.15 Summary
