@@ -1,5 +1,5 @@
 [package]
-name = "_2-29-searching-with-regex"
+name = "_2-37-search-regex-within-file-or-stdin"
 version = "0.1.0"
 authors = ["ltbringer <amresh.venugopal@gmail.com>"]
 edition = "2018"
@@ -10,3 +10,4 @@ edition = "2018"
 regex = "1"
 clap = "2"
 toml = "0.5.8"
+serde = { version = "1.0", features = ["derive"] }
