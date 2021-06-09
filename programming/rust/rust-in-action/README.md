@@ -81,11 +81,11 @@ TOC-wise progress
     - [ ] 2.14 Reading from STDIN
     - [ ] 2.15 Summary
 
-- [ ] 3 COMPOUND DATA TYPES
-    - [ ] 3.1 Using plain functions to experiment with an API
-    - [ ] 3.2 Modelling files with struct
-    - [ ] 3.3 Adding Methods to a struct with impl
-    - [ ] 3.3.1 Simplifying object creation by implementing a new() method
+- [x] 3 COMPOUND DATA TYPES
+    - [x] 3.1 Using plain functions to experiment with an API
+    - [x] 3.2 Modelling files with struct
+    - [x] 3.3 Adding Methods to a struct with impl
+    - [x] 3.3.1 Simplifying object creation by implementing a new() method
     - [ ] 3.4 Returning errors
     - [ ] 3.4.1 Modifying a known global variable
     - [ ] 3.4.2 Making use of the Result return type
