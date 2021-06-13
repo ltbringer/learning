@@ -86,30 +86,30 @@ TOC-wise progress
     - [x] 3.2 Modelling files with struct
     - [x] 3.3 Adding Methods to a struct with impl
     - [x] 3.3.1 Simplifying object creation by implementing a new() method
-    - [ ] 3.4 Returning errors
+    - [x] 3.4 Returning errors
     - [ ] 3.4.1 Modifying a known global variable
-    - [ ] 3.4.2 Making use of the Result return type
-    - [ ] 3.5 Defining and making use of enum
-    - [ ] 3.5.1 Using an enum to manage internal state
-    - [ ] 3.6 Defining Common Behavior with Traits
+    - [x] 3.4.2 Making use of the Result return type
+    - [x] 3.5 Defining and making use of enum
+    - [x] 3.5.1 Using an enum to manage internal state
+    - [x] 3.6 Defining Common Behavior with Traits
     - [ ] 3.6.1 Creating a Read trait
-    - [ ] 3.6.2 Implementing std::fmt::display for your own types
-    - [ ] 3.7 Exposing your types to the world
-    - [ ] 3.7.1 Protecting private data
+    - [x] 3.6.2 Implementing std::fmt::display for your own types
+    - [x] 3.7 Exposing your types to the world
+    - [x] 3.7.1 Protecting private data
     - [ ] 3.8 Creating In-line Documentation
     - [ ] 3.8.1 Using rustdoc to Render Docs For a Single Source File
     - [ ] 3.8.2 Using cargo to Render Docs for a Crate and its Dependencies
     - [ ] 3.9 Summary
-    - [ ]  READ IN LIVEBOOK
+
     - [ ] 4 LIFETIMES, OWNERSHIP AND BORROWING
-    - [ ] 4.1" Implementing" a Mock CubeSat Ground Station
-    - [ ] 4.1.1 Encountering our first lifetime issue
-    - [ ] 4.1.2 Special behavior of primitive types
-    - [ ] 4.2 Guide to the figures in this chapter
-    - [ ] 4.3 What is an Owner? Does it Have any Responsibilities?
-    - [ ] 4.4 How Ownership Moves
-    - [ ] 4.5 Resolving Ownership Issues
-    - [ ] 4.5.1 Use references where full ownership is not required
+    - [x] 4.1" Implementing" a Mock CubeSat Ground Station
+    - [x] 4.1.1 Encountering our first lifetime issue
+    - [x] 4.1.2 Special behavior of primitive types
+    - [x] 4.2 Guide to the figures in this chapter
+    - [x] 4.3 What is an Owner? Does it Have any Responsibilities?
+    - [X] 4.4 How Ownership Moves
+    - [x] 4.5 Resolving Ownership Issues
+    - [x] 4.5.1 Use references where full ownership is not required
     - [ ] 4.5.2 Use Fewer Long-Lived Values
     - [ ] 4.5.3 Duplicate the value
     - [ ] 4.5.4 Wrap Data Within Specialty Types
