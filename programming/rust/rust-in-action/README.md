@@ -110,7 +110,7 @@ TOC-wise progress
     - [X] 4.4 How Ownership Moves
     - [x] 4.5 Resolving Ownership Issues
     - [x] 4.5.1 Use references where full ownership is not required
-    - [ ] 4.5.2 Use Fewer Long-Lived Values
+    - [x] 4.5.2 Use Fewer Long-Lived Values
     - [ ] 4.5.3 Duplicate the value
     - [ ] 4.5.4 Wrap Data Within Specialty Types
     - [ ] 4.6 Summary
