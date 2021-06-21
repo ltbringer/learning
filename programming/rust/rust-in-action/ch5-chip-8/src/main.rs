@@ -11,7 +11,9 @@
 struct CPU {
     registers: [u8; 16],
     memory: [u8; 4096],
-    position_in_memory: u8,
+    position_in_memory: usize,
+    stack: [u16; 16],
+    stack_pointer: usize,
 }
 
 impl CPU {
@@ -20,6 +22,27 @@ impl CPU {
         let op_high_byte = self.memory[p] as u16;
         let op_low_byte = self.memory[p + 1] as u16;
         op_high_byte << 8 | op_low_byte
+    }
+
+    fn call(&mut self, addr: u16) {
+        let sp = self.stack_pointer;
+        let stack = &mut self.stack;
+        if sp > stack.len() {
+            panic!("stack overflow")
+        }
+
+        stack[sp] = self.position_in_memory as u16;
+        self.stack_pointer += 1;
+        self.position_in_memory = addr as usize;
+    }
+
+    fn ret(&mut self) {
+        if self.stack_pointer == 0 {
+            panic!("stack overflow");
+        }
+
+        self.stack_pointer -= 1;
+        self.position_in_memory = self.stack[self.stack_pointer] as usize;
     }
 
     fn add_xy(&mut self, x: u8, y: u8) {
@@ -59,6 +82,8 @@ fn main() {
         registers: [0; 16],
         memory: [0; 4096],
         position_in_memory: 0,
+        stack: [0; 16],
+        stack_pointer: 0,
     };
 
     cpu.registers[0] = 5;
