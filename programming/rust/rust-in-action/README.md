@@ -128,9 +128,9 @@ TOC-wise progress
     - [ ] 5.3.6 Representing decimal numbers in a single byte with a fixed-point number format
     - [ ] 5.4 Generating f32 values between 0 and 1 from random bytes
     - [ ] 5.5 Implementing a CPU in Software to Establish that Functions are also Data
-    - [ ] 5.5.1 CPU 1: "the Adder"
-    - [ ] 5.5.2 First working emulator
-    - [ ] 5.5.3 CPU 2: "the Multiplier"
+    - [x] 5.5.1 CPU 1: "the Adder"
+    - [x] 5.5.2 First working emulator
+    - [x] 5.5.3 CPU 2: "the Multiplier"
     - [ ] 5.5.4 CPU 3: Adding functions
     - [ ] 5.5.5 CPU 4: Adding the rest
     - [ ] 5.6 Summary
