@@ -65,10 +65,13 @@ impl CPU {
             let x = ((opcode & 0x0F00) >> 8) as u8;
             let y = ((opcode & 0x00F0) >> 4) as u8;
             let d = (opcode & 0x000F) as u8;
+            let nnn = opcode & 0x0FFF;
             match (c, x, y, d) {
                 (0, 0, 0, 0) => {
                     return;
                 }
+                (0, 0, 0xE, 0xE) => self.ret(),
+                (0x2, _, _, _) => self.call(nnn),
                 (0x8, _, _, 0x4) => self.add_xy(x, y),
                 _ => todo!("opcode: {:04x}", opcode),
             }
@@ -91,14 +94,17 @@ fn main() {
     cpu.registers[2] = 17;
     cpu.registers[3] = 21;
 
-    cpu.memory[0] = 0x80;
-    cpu.memory[1] = 0x14;
-    cpu.memory[2] = 0x80;
-    cpu.memory[3] = 0x24;
-    cpu.memory[4] = 0x80;
-    cpu.memory[5] = 0x34;
-    cpu.memory[6] = 0x00;
-    cpu.memory[7] = 0x00;
+    cpu.memory[0x000] = 0x21;
+    cpu.memory[0x001] = 0x00;
+    cpu.memory[0x002] = 0x21;
+    cpu.memory[0x003] = 0x00;
+
+    cpu.memory[0x100] = 0x80;
+    cpu.memory[0x101] = 0x14;
+    cpu.memory[0x102] = 0x80;
+    cpu.memory[0x103] = 0x14;
+    cpu.memory[0x104] = 0x00;
+    cpu.memory[0x105] = 0xEE;
 
     cpu.run();
     println!("{}", cpu.registers[0]);
