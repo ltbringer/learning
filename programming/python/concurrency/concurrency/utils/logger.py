@@ -33,3 +33,5 @@ FILE: {name}:L{line} <blue>{function}(...)</blue>
         },
     ]
 )
+
+logger.enable("conc")
