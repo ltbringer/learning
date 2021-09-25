@@ -1,7 +1,7 @@
-from concurrency.thread import sum_thread
+from concurrency.thread import sum_
 
 
 def test_sum_thread():
-    value = sum_thread.single_thread()
-    assert value == sum_thread.multi_thread()
-    assert value == sum_thread.multi_processes()
+    value = sum_.single_thread()
+    assert value == sum_.multi_thread()
+    assert value == sum_.multi_processes()
