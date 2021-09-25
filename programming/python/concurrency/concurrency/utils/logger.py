@@ -1,0 +1,35 @@
+"""
+Module provides access to logger.
+
+This needs to be used sparingly, prefer to raise specific exceptions instead.
+
+Import functions:
+    - change_log_level
+"""
+import sys
+
+from loguru import logger
+
+logger.configure(
+    handlers=[
+        {
+            "sink": sys.stdout,
+            "format": """
+-------------------------------------------------------
+<level>{level}</level>
+-------
+TIME: <green>{time}</green>
+FILE: {name}:L{line} <blue>{function}(...)</blue>
+<level>{message}</level>
+-------------------------------------------------------
+""",
+            "colorize": True,
+        },
+        {
+            "sink": "file.log",
+            "rotation": "500MB",
+            "retention": "10 days",
+            "format": "{time} {level} -\n{message}\n--------------------\n",
+        },
+    ]
+)
