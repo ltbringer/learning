@@ -16,7 +16,7 @@ import re
 from unidecode import unidecode
 
 
-def preprocess_line(line) -> str:
+def preprocess_line(line: str) -> str:
     """
     Transform string to lowercase and remove non-alphanumeric characters.
 
@@ -24,6 +24,6 @@ def preprocess_line(line) -> str:
     :type line: str
     """
     line = unidecode(line).lower()
-    line = re.sub(r'[^a-z0-9\s\.]', '', line)
-    line = re.sub(r'\d', '0', line)
+    line = re.sub(r"[^a-z0-9\s\.]", "", line)
+    line = re.sub(r"\d", "0", line)
     return line
