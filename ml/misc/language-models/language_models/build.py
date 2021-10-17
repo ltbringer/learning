@@ -1,3 +1,4 @@
+import math
 import random
 from typing import Tuple, Union, Iterator, List, Optional
 from collections import defaultdict
@@ -17,14 +18,15 @@ def preprocess_lines(lines: Iterator[str]) -> Iterator[str]:
 
 
 def make_ngrams(
-    lines: Iterator[str], n=1, start="#", end="#"
+    lines: Iterator[str],
+    n=1,
+    start="#",
+    end="#"
 ) -> Iterator[Tuple[str, ...]]:
     for line in lines:
         ngrams = []
         line = f"{start}{start}{line}{end}"
-        for i in range(len(line)):
-            if i + n > len(line):
-                break
+        for i in range(len(line) - (n - 1)):
             ngrams.append(line[i : i + n])
         yield tuple(ngrams)
 
@@ -95,8 +97,18 @@ class LanguageModel:
             sentence += next_char
         return sentence.replace(self.start, "").replace(self.end, "")
 
-    def generate(self, seed: Optional[str] = None, count=1, fn=None) -> str:
+    def generate(self, seed: Optional[str] = None, count=1) -> List[str]:
         if seed is None:
             seed = "".join(random.choice(list(self.ngram_proba.keys())))
-        sentences = "\n".join([self.generate_single(seed) for _ in range(count)])
-        return fn(sentences) if fn else sentences
+        return [self.generate_single(seed) for _ in range(count)]
+
+    def perplexity(self, sentence):
+        sentence = preprocess_line(sentence)
+        chars = list(sentence)
+        log_prob = 0
+        for i in range(len(chars) - self.ngrams + 1):
+            ngram = tuple(chars[i: i + self.ngrams - 1])
+            char = chars[i + self.ngrams - 1]
+            p = self.p(char, given=ngram)
+            log_prob += math.log(p)
+        return sentence, f"{math.exp(-log_prob / len(chars)):0.4f}"
