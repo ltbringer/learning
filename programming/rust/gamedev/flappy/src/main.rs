@@ -50,6 +50,21 @@ struct State {
     mode: GameMode,
 }
 
+impl State {
+    fn new() -> State {
+        State {
+            player: Player::new(5, 25),
+            frame_time: 0.0,
+            mode: GameMode::Menu,
+        }
+    }
+
+    fn restart(&mut self) {
+        self.player = Player::new(5, 25);
+        self.frame_time = 0.0;
+        self.mode = GameMode::Playing;
+    }
+
     fn play(&mut self, ctx: &mut BTerm) {
         ctx.cls_bg(NAVY);
         self.frame_time += ctx.frame_time_ms;
