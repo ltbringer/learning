@@ -99,6 +99,16 @@ struct State {
     }
 }
 
+impl GameState for State {
+    fn tick(&mut self, ctx: &mut BTerm) {
+        match self.mode {
+            GameMode::Menu => self.main_menu(ctx),
+            GameMode::Playing => self.play(ctx),
+            GameMode::End => self.dead(ctx)
+        }
+    }
+}
+
 fn main() -> BError {
     let ctx = BTermBuilder::simple80x50()
         .with_title("Hello Rust World!")
