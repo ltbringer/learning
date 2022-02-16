@@ -50,6 +50,54 @@ struct State {
     mode: GameMode,
 }
 
+    fn play(&mut self, ctx: &mut BTerm) {
+        ctx.cls_bg(NAVY);
+        self.frame_time += ctx.frame_time_ms;
+        if self.frame_time > FRAME_DURATION {
+            self.frame_time = 0.0;
+            self.player.gravity_move();
+        }
+        if let Some(key) = ctx.key {
+            match key {
+                VirtualKeyCode::Space => self.player.flap(),
+                _ => {}
+            }
+        }
+        self.player.render(ctx);
+        ctx.print(0,0, "Press space to flap.");
+        if self.player.y > SCREEN_HEIGHT || self.player.y == 0 {
+            self.mode = GameMode::End;
+        }
+    }
+
+    fn main_menu(&mut self, ctx: &mut BTerm) {
+        ctx.cls();
+        ctx.print_centered(5, "Welcome to Flappy");
+        ctx.print_centered(8, "[P] Play");
+        ctx.print_centered(9, "[Q] Quit");
+        if let Some(key) = ctx.key {
+            match key {
+                VirtualKeyCode::P => self.restart(),
+                VirtualKeyCode::Q => ctx.quitting = true,
+                _ => {}
+            }
+        }
+    }
+
+    fn dead(&mut self, ctx: &mut BTerm) {
+        ctx.cls();
+        ctx.print_centered(5, "You Died!");
+        ctx.print_centered(8, "[P] Play");
+        ctx.print_centered(9, "[Q] Exit");
+        if let Some(key) = ctx.key {
+            match key {
+                VirtualKeyCode::P => self.restart(),
+                VirtualKeyCode::Q => ctx.quitting = true,
+                _ => {}
+            }
+        }
+    }
+}
 
 fn main() -> BError {
     let ctx = BTermBuilder::simple80x50()
