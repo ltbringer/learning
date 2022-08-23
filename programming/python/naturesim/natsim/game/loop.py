@@ -31,10 +31,6 @@ def main():
             screen.blit(sprite.surf, sprite.position)
 
         for plant in plants:
-            if plant.dead():
-                plant.color = (0, 0, 0)
-                plant.kill()
-                continue
             plant.grow()
 
         for animal in animals:
