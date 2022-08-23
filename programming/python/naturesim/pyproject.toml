@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "natsim"
+version = "0.1.0"
+description = "A simulator for understanding plant animal interaction in an energy focused ecosystem."
+authors = ["ltbringer <amresh.venugopal@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+numpy = "^1.23.2"
+pygame = "^2.1.2"
+attrs = "22.1.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+game = "natsim.game.loop:main"
