@@ -8,8 +8,8 @@ def main():
     height = 1080
     screen = pygame.display.set_mode([width, height])
 
-    animals = pygame.sprite.Group()
-    plants = pygame.sprite.Group()
+    animals: List[Animal] = pygame.sprite.Group()
+    plants: List[Plant] = pygame.sprite.Group()
     all_sprites = pygame.sprite.Group()
 
     for _ in range(2000):
