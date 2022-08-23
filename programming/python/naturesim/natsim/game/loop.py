@@ -1,3 +1,5 @@
+from typing import List
+
 import pygame
 from natsim.animal import Animal
 from natsim.plant import Plant
@@ -15,7 +17,7 @@ def main():
     for _ in range(2000):
         Plant(max_x=width, max_y=height, groups=[plants, all_sprites])
 
-    for _ in range(5):
+    for _ in range(1):
         Animal(max_x=width, max_y=height, groups=[animals, all_sprites])
 
     running = True
@@ -34,10 +36,11 @@ def main():
             plant.grow()
 
         for animal in animals:
-            if animal.dead():
+            if animal.exhausted():
                 animal.color = (0, 0, 0)
                 animal.kill()
                 continue
+
             animal.move(width, height)
             touched_plants = pygame.sprite.spritecollide(animal, plants, dokill=False)
             for plant in touched_plants:
