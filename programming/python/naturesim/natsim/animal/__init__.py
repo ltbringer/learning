@@ -64,6 +64,10 @@ class Animal(Sprite):
         return cls(**data)
 
     @property
+    def fitness(self):
+        return self.energy + self.stats["attack"] + self.stats["defense"]
+
+    @property
     def speed(self):
         return self.stats["speed"]["value"]
 
@@ -75,11 +79,14 @@ class Animal(Sprite):
     def position(self):
         return (self.x, self.y)
 
-    def alive(self):
+    def active(self):
         return self.energy > 0
 
-    def dead(self):
+    def exhausted(self):
         return not self.alive()
+
+    def locate_food(self):
+        ...
 
     def update_position(self, max_size, value):
         if value > max_size:
@@ -91,7 +98,7 @@ class Animal(Sprite):
         return value
 
     def move(self, width: int, height: int):
-        if self.dead():
+        if self.exhausted():
             return
         dx = self.vector[0] * self.speed
         dy = self.vector[1] * self.speed
