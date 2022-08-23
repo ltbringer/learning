@@ -77,6 +77,7 @@ class Plant(Sprite):
     def set_size(self):
         self.size = min(np.sqrt(self.energy), self.max_size)
         self.surf = Surface((self.size, self.size))
+        self.rect = self.surf.get_rect(center=(self.x, self.y))
         self.surf.fill(self.color)
 
     def diminish(self, absorbed_energy):
