@@ -4,6 +4,7 @@ import colorsys
 from typing import Callable, Tuple, Optional
 
 import numpy as np
+import pygame
 from pygame.sprite import Sprite, Group
 from pygame import Surface
 from natsim.plant import Plant
@@ -26,6 +27,24 @@ def random_color() -> Tuple[int, int, int]:
     return tuple(int(255 * x) for x in colorsys.hsv_to_rgb(hue, sat, light))
 
 
+class Eye(Sprite):
+    def __init__(
+        self,
+        size: int,
+        x: float,
+        y: float
+    ):
+        super().__init__()
+        self.x = x
+        self.y = y
+        self.surf = Surface((size, size), pygame.SRCALPHA)
+        self.rect = self.surf.get_rect(center=(x, y))
+
+    @property
+    def position(self):
+        return (self.x, self.y)
+
+
 class Animal(Sprite):
     def __init__(
         self,
@@ -44,20 +63,21 @@ class Animal(Sprite):
         self.y = y or random_vec(0, max_y)
         self.vector = vector or random_vec(-1, 1, 2)
 
-        self.energy = 1e5
+        self.energy = 10
         self.size = 5
 
         self.stats = {
             "attack": {"value": 0, "max": 20},
             "defense": {"value": 0, "max": 20},
-            "speed": {"value": 1, "max": 10},
-            "vision": {"value": 20, "max": 50},
+            "speed": {"value": 0.5, "max": 1},
+            "vision": {"value": 500, "max": 500},
         }
 
         self.color = (255, 255, 255)
         self.surf = Surface((self.size, self.size))
         self.rect = self.surf.get_rect(center=(self.x, self.y))
         self.surf.fill(self.color)
+        self.eye = Eye(self.stats["vision"]["value"], self.x, self.y)
 
     @classmethod
     def from_dict(cls, data: dict):
@@ -72,12 +92,16 @@ class Animal(Sprite):
         return self.stats["speed"]["value"]
 
     @property
+    def vision(self):
+        return self.stats["vision"]["value"]
+
+    @property
     def radius(self):
         return self.size
 
     @property
     def position(self):
-        return (self.x, self.y)
+        return np.array([self.x, self.y])
 
     def active(self):
         return self.energy > 0
@@ -85,8 +109,13 @@ class Animal(Sprite):
     def exhausted(self):
         return not self.alive()
 
-    def locate_food(self):
-        ...
+    def target(self, plants):
+        plants_ = sorted(plants, key=lambda plant: plant.energy)
+        for plant in plants_:
+            plant: Plant
+            if plant.energy > 10:
+                magnitude = np.linalg.norm(plant.position - self.position)
+                self.vector = (plant.position - self.position) / magnitude
 
     def update_position(self, max_size, value):
         if value > max_size:
@@ -106,18 +135,20 @@ class Animal(Sprite):
         self.y = self.update_position(height, self.y + dy)
         self.energy -= 1
         self.rect = self.surf.get_rect(center=(self.x, self.y))
+        self.eye.rect = self.eye.surf.get_rect(center=(self.x, self.y))
         if self.energy < 100:
             self.color = (255, 0, 0)
 
-    def digest(self, plant: Plant):
-        absorbed_energy = max(plant.energy - 1, 0)
-        plant.diminish(absorbed_energy)
-        self.energy += absorbed_energy
-        if absorbed_energy > 10:
-            print(f"Absorbed {absorbed_energy} from plant {plant.id_}, it now has {plant.energy} left.")
-        if self.energy > 100:
-            self.color = (255, 255, 255)
+    def digest(self, plants: Plant):
+        for plant in plants:
+            absorbed_energy = max(plant.energy - 1, 0)
+            plant.diminish(absorbed_energy)
+            self.energy += absorbed_energy
+            if absorbed_energy > 1000:
+                print(f"Absorbed {absorbed_energy} from plant {plant.id_}, it now has {plant.energy} left.")
+            if self.energy > 100:
+                self.color = (255, 255, 255)
 
-        for nutrient in plant.nutrients:
-            new_stat = plant.nutrients[nutrient] + self.stats[nutrient]["value"]
-            self.stats[nutrient]["value"] = min(new_stat, self.stats[nutrient]["max"])
+            for nutrient in plant.nutrients:
+                new_stat = plant.nutrients[nutrient] + self.stats[nutrient]["value"]
+                self.stats[nutrient]["value"] = min(new_stat, self.stats[nutrient]["max"])

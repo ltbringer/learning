@@ -1,39 +1,53 @@
 from typing import List
 
 import pygame
+import numpy as np
+
 from natsim.animal import Animal
 from natsim.plant import Plant
 
 
 def main():
-    width = 1900
-    height = 1080
+    width = 1850
+    height = 1010
     screen = pygame.display.set_mode([width, height])
 
     animals: List[Animal] = pygame.sprite.Group()
     plants: List[Plant] = pygame.sprite.Group()
-    all_sprites = pygame.sprite.Group()
 
-    for _ in range(2000):
-        Plant(max_x=width, max_y=height, groups=[plants, all_sprites])
+    for _ in range(100):
+        Plant(max_x=width, max_y=height, groups=[plants])
 
-    for _ in range(1):
-        Animal(max_x=width, max_y=height, groups=[animals, all_sprites])
+    for _ in range(5):
+        Animal(max_x=width, max_y=height, groups=[animals])
 
     running = True
+    day = True
+    ticks = 0
     while running:
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
 
-        screen.fill((0, 0, 0))
+        ticks += 1
 
-        for sprite in all_sprites:
-            screen.blit(sprite.surf, sprite.position)
+        if ticks % 1000 == 0:
+            day = not day
+
+        if day:
+            screen.fill((5, 26, 54))
+        else:
+            screen.fill((0, 0, 0))
 
         for plant in plants:
-            plant.grow()
+            screen.blit(plant.surf, plant.position)
+            if day:
+                plant.grow()
+
+        for animal in animals:
+            screen.blit(animal.surf, animal.position)
+            screen.blit(animal.eye.surf, animal.eye.position)
 
         for animal in animals:
             if animal.exhausted():
@@ -42,12 +56,12 @@ def main():
                 continue
 
             animal.move(width, height)
+
+            seen_plants = pygame.sprite.spritecollide(animal.eye, plants, dokill=False)
+            animal.target(seen_plants)
+
             touched_plants = pygame.sprite.spritecollide(animal, plants, dokill=False)
-            for plant in touched_plants:
-                animal.digest(plant)
+            animal.digest(touched_plants)
 
-        # Flip the display
         pygame.display.flip()
-
-    # Done! Time to quit.
     pygame.quit()

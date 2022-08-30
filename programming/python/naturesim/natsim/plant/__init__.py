@@ -18,9 +18,9 @@ def random_vec(
 
 
 def random_color() -> Tuple[int, int, int]:
-    hue = np.random.uniform(0.2, 0.5)
-    sat = np.random.uniform(0.42, 1)
-    light = np.random.uniform(0.7, 1)
+    hue = np.random.uniform(0.2, 0.36)
+    sat = np.random.uniform(0.3, 1)
+    light = np.random.uniform(0.5, 1)
     return tuple(int(255 * x) for x in colorsys.hsv_to_rgb(hue, sat, light))
 
 
@@ -63,15 +63,15 @@ class Plant(Sprite):
 
     @property
     def position(self):
-        return (self.x, self.y)
+        return np.array([self.x, self.y])
 
     def grow(self):
         if self.dead():
             return
 
-        self.energy = min(self.energy + self.growth_rate, 1e6)
+        self.energy = min(self.energy + self.growth_rate, np.square(self.max_size))
         for nutrient in self.nutrients:
-            self.nutrients[nutrient] += self.growth_rate
+            self.nutrients[nutrient] += self.growth_rate if np.random.random() > 0.80 else 0
         self.set_size()
 
     def set_size(self):
